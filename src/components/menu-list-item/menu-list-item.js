@@ -1,14 +1,24 @@
 import React from 'react';
 import './menu-list-item.scss';
+import meat from '../../assets/images/meat.png';
+import pizza from '../../assets/images/pizza.png';
+import salads from '../../assets/images/salads.png';
 
 const MenuListItem = ({menuItem, addedToCart}) => {
 
-    const {title, price, url, category, categoryImg = null} = menuItem;
+    const {title, price, url, category } = menuItem;
+
+    const allCategory = {
+        meat, pizza, salads,
+    };
+
+    const categoryImage = <img src={allCategory[category]} alt={category}/>
+
     return (
         <>
             <li className="menu__item">
                 <div className="menu__category--img">
-                    <img src={categoryImg} alt={category}/>
+                    {categoryImage}
                 </div>
                 <div className="menu__title">{title}</div>
                 <img className="menu__img" src={url} alt={title} />
