@@ -7,6 +7,7 @@ const AppHeader = ({total}) => {
     return (
         <header className="header">
         <Link to="/#" className="header__link">Menu</Link>
+        <Link to="/lund" className="header__link">Lund</Link>
         <Link to="/cart" className="header__link">
             <img className="header__cart" src={cartIcon} alt="cart"/>
             Total: {total} $
