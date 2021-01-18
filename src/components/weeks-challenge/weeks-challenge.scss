@@ -1,0 +1,143 @@
+$color-green: #3DBCA1;
+$color-white: #fff;
+$color-grey: #979797;
+
+.weeks-challenge {
+  max-width: 542px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.weeks-challenge__header {
+  position: relative;
+  padding: 5px 8px;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-green;
+}
+
+.time-left {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  display: inline-block;
+  max-width: 70px;
+  padding: 2px 4px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000;
+  background-color: $color-white;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.weeks-challenge__progress-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 14px;
+  list-style: none;
+}
+
+.weeks-challenge__progress-item {
+  position: relative;
+  padding-left: 150px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 36px;
+    width: calc(100% - 36px);
+    height: 2px;
+    background-color: $color-grey;
+    z-index: 0;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 54px;
+    &:before {
+      left: 0;
+      width: calc(100% - 90px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: 5px;
+      width: 50px;
+      height: 2px;
+      background-color: $color-grey;
+    }
+  }
+
+  &--active {
+    &:before {
+      background-color: $color-green;
+    }
+    .weeks-challenge__progress-image-task {
+      border-color: $color-green;
+    }
+  }
+}
+
+.weeks-challenge__progress-image-task {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 2px solid $color-grey;
+  box-sizing: content-box;
+  z-index: 1
+}
+
+.weeks-challenge__progress-task-complete,
+.weeks-challenge__progress-task-complete-last {
+  position: absolute;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  background-color: $color-white;
+  border: 2px solid $color-grey;
+  border-radius: 50%;
+  z-index: 1;
+}
+.weeks-challenge__progress-task-complete {
+  left: 70px;
+}
+
+.weeks-challenge__progress-task-complete-last {
+  right: 0;
+}
+
+.weeks-challenge__progress-xp {
+  position: absolute;
+  top: 18px;
+  left: -50%;
+  transform: translateX(-25%);
+}
+
+
+.weeks-challenge__check-list {
+  display: flex;
+  padding: 10px 32px 18px;
+}
+
+.weeks-challenge__check-item {
+  margin-right: 50px;
+}
+
+
+.seasonal-rewards__list {
+  display: flex;
+}
+
+.seasonal-rewards__item {
+  max-width: 80px;
+  width: 100%;
+  height: 94px;
+  padding: 10px;
+  border: 1px solid $color-grey;
+}
